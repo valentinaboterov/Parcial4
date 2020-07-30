@@ -20,12 +20,14 @@ SOURCES += \
     objeto1.cpp \
     objeto2.cpp \
     obstaculos.cpp \
+    paredes.cpp \
     widget.cpp
 
 HEADERS += \
     objeto1.h \
     objeto2.h \
     obstaculos.h \
+    paredes.h \
     widget.h
 
 FORMS += \
