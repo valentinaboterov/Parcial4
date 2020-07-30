@@ -20,6 +20,7 @@ Widget::Widget(QWidget *parent)
     o2=0;
     aparecer=100;
     aparecer1=100;
+    desaparecer=0;
     escena=new QGraphicsScene(x,y,ancho,alto);
     escena->setBackgroundBrush(QPixmap(":/Imagenes/fondo.jpg"));
     ui->graphicsView->setScene(escena);
@@ -39,8 +40,9 @@ Widget::~Widget()
 
 void Widget::on_Agregar_clicked()
 {
-    posx=randInt(40,100);
-    caidalibre.push_back(new Objeto2(posx,100)); escena->addItem(caidalibre.back());
+    posx=randInt(20,600);
+    posy=randInt(10,50);
+    caidalibre.push_back(new Objeto2(posx,posy)); escena->addItem(caidalibre.back());
 }
 
 void Widget::Actualizar()
@@ -48,20 +50,6 @@ void Widget::Actualizar()
     if(contador1<5000){
             contador1+=10;
     }
-    /*
-    if(contador1==aparecer){
-        aparecer+=100;
-        posx=randInt(200,600);
-        posy=randInt(100,300);
-        parabolico.push_back(new Objeto1(posx,posy));
-        escena->addItem(parabolico.back());
-    }
-    for(int i=0;i<parabolico.length();i++){
-        parabolico.at(i)->t+=0.8;
-        parabolico.at(i)->ActualizarVelocidad();
-        parabolico.at(i)->ActualizarPosicion();
-    }
-    */
     //OBSTACULO
     if(contador2<600){
             contador2+=50;
@@ -78,7 +66,7 @@ void Widget::Actualizar()
     }
     //OBJETO ESPECIAL
     for(int i=0;i<caidalibre.length();i++){
-        caidalibre.at(i)->t+=0.8;
+        caidalibre.at(i)->t+=5;
         caidalibre.at(i)->Actualizar();
     }
 
@@ -117,7 +105,7 @@ void Widget::Colisiones()
         }
         for(int j=0;j<obstaculos.length();j++){
             if(caidalibre.at(i)->collidesWithItem(obstaculos.at(j))){
-                caidalibre.at(i)->tamano(caidalibre.at(i)->getR()-5);
+                caidalibre.at(i)->tamano(caidalibre.at(i)->getR()-2);
             }
         }
     }

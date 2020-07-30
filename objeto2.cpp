@@ -4,6 +4,7 @@ Objeto2::Objeto2(int _x,int _y)
 {
     pos[0]=_x;
     pos[1]=_y;
+    setPos(_x,_y);
     g=-9.8;
     R=20;
     velocidad=5;

@@ -20,16 +20,16 @@ void Obstaculos::paint(QPainter *painter, const QStyleOptionGraphicsItem *option
 }
 void Obstaculos::actualizar(){
     //Suma o resta a la posicion en x segun el caso.
+    if(pos[0]>300){
+        cambiar=1;
+    }if(pos[0]<80){
+        cambiar=0;
+    }
     if(cambiar==0){
         pos[0]+=30;
-        if(pos[0]>400){
-            cambiar=1;
-        }
     }else{
         pos[0]-=30;
-        if(pos[0]<80){
-            cambiar=0;
-        }
+
     }
     setPos(pos[0],pos[1]);
 }
