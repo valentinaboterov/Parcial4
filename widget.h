@@ -43,9 +43,10 @@ private:
     QList<Objeto2 *> caidalibre;
     QList<Obstaculos *> obstaculos;
     QList<Obstaculos *> cambiar(QList<Obstaculos*> lista,int pos);
-    int contador1,o1,o2,o3;
+    int contador1,contador2,o1,o2,o3;
     int aleatorio1,aleatorio2;
     int randInt(int bajo, int alto);
     void construccion_paredes();
+    void Colisiones();
 };
 #endif // WIDGET_H

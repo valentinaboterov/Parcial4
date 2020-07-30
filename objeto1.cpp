@@ -6,11 +6,11 @@ Objeto1::Objeto1(int _x, int _y)
     pos[1]=_y;
     setPos(pos[0],pos[1]);
     R=10;
-    g=-9.8;
+    g=9.8;
     velocidad[0]=2;
     velocidad[1]=0;
     velocidad[2]=5;
-    angulo=30*rad;
+    angulo=40*rad;
 }
 QRectF Objeto1::boundingRect() const
 {
@@ -31,8 +31,8 @@ void Objeto1::ActualizarPosicion()
 
 void Objeto1::ActualizarVelocidad()
 {
-    velocidad[1]=velocidad[0]*cos(angulo*rad);
-    velocidad[2]=velocidad[0]*sin(angulo*rad)-g*t;
+    velocidad[1]=velocidad[0]*cos(angulo);
+    velocidad[2]=velocidad[0]*sin(angulo)-g*t;
     angulo=atan2(velocidad[2],velocidad[1]);
     velocidad[0]= sqrt(pow(velocidad[1],2)+ pow(velocidad[2],2));
 }
