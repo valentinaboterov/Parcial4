@@ -17,9 +17,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
+    objeto1.cpp \
+    objeto2.cpp \
+    obstaculos.cpp \
     widget.cpp
 
 HEADERS += \
+    objeto1.h \
+    objeto2.h \
+    obstaculos.h \
     widget.h
 
 FORMS += \
@@ -29,3 +35,8 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    Imagenes.qrc
+
+DISTFILES +=

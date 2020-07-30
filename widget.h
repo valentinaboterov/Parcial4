@@ -2,6 +2,13 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QGraphicsItem>
+#include<QObject>
+#include <QGraphicsView>
+#include <QGraphicsScene>
+#include<QPixmap>
+#include<QTimer>
+#include<QMessageBox>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -14,8 +21,10 @@ class Widget : public QWidget
 public:
     Widget(QWidget *parent = nullptr);
     ~Widget();
+    QGraphicsScene *escena;
 
 private:
     Ui::Widget *ui;
+    int x,y,ancho,alto;
 };
 #endif // WIDGET_H
